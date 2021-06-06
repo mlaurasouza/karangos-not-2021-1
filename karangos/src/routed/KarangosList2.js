@@ -49,8 +49,9 @@ export default function KarangosList() {
   const history = useHistory()
 
   useEffect(() => {
+
     getData()
-  }, []) // Quando a lista de dependências é um vetor vazio, o useEffect()
+  }, [ ]) // Quando a lista de dependências é um vetor vazio, o useEffect()
          // é executado apenas uma vez, no carregamento inicial do componente
 
   async function getData() {
@@ -163,7 +164,7 @@ export default function KarangosList() {
       headerAlign: 'center', 
       flex: true,
       renderCell: params => (
-        <IconButton aria-label="editar">
+        <IconButton aria-label="editar" onClick={()=> history.push(`/edit/${params.id}`)}>
           <EditIcon />
         </IconButton>
       )
@@ -202,7 +203,8 @@ export default function KarangosList() {
         </Button>
       </Toolbar>
       <Paper elevation={4}>
-        <DataGrid className={classes.dataGrid} rows={karangos} columns={columns} pageSize={10} autoHeight={true} disableSelectionOnClick={true} />
+        <DataGrid className={classes.dataGrid} rows={karangos} columns={columns} 
+        pageSize={10} autoHeight={true} disableSelectionOnClick={true} />
       </Paper>
     </>
   )

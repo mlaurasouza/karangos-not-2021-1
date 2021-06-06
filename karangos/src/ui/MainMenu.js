@@ -5,7 +5,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import {makeStyles} from '@material-ui/core/styles'
 import MenuIcon from '@material-ui/icons/Menu'
 import {Link} from 'react-router-dom'
-import createPalette from '@material-ui/core/styles/createPalette';
 
 const useStyles = makeStyles((theme) => ({
     menuButton: {
@@ -49,6 +48,12 @@ const classes = useStyles();
           </MenuItem>
         <MenuItem onClick={handleClose}>
           <Link  className={classes.menuLink} to="/new">Cadastrar novo Karango</Link>
+          </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link  className={classes.menuLink} to="/listc">Listagem de Clientes</Link>
+          </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <Link  className={classes.menuLink} to="/newc">Cadastrar novo Cliente</Link>
           </MenuItem>
       </Menu>
     </div>
